@@ -1,0 +1,33 @@
+
+.delete-button{
+    background-color: red;
+    padding: 8px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tasklist-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+          
+}
+.tasks-not-found{
+    text-align:center;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.tasks-length{
+     padding: 0 10px;
+     font-weight: 400;
+     font-size: 0.8rem;
+     white-space:nowrap;
+}

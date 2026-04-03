@@ -79,7 +79,7 @@ export const updateTodo = async (req, res, next) => {
     });
 
     if (!saved) {
-      throwError(400, "Cannot save todo, try again later.");
+       throwError(404, "Todo does not exist.");
     }
 
     res.status(200).json({

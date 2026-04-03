@@ -10,7 +10,7 @@ const appRouter = express.Router();
 
 appRouter.get("/", getAllTodos);
 appRouter.post("/create", createTodo);
-appRouter.patch("/update/:id", updateTodo);
+appRouter.put("/update/:id", updateTodo);
 appRouter.delete("/delete/:id", deleteTodo);
 
 export default appRouter;

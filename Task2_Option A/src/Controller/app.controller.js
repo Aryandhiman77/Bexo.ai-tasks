@@ -16,7 +16,7 @@ export const createTodo = async (req, res, next) => {
       throwError(400, "Cannot create todo, try again later.");
     }
     return res.status(201).json({
-      status: true,
+      success: true,
       message: "Todo created",
       data: createdTodo,
     });
@@ -31,7 +31,7 @@ export const getAllTodos = async (req, res, next) => {
     if (!status || !values.includes(status) || status === "all") {
       const todos = await Todo.find({}).sort({ createdAt: -1 });
       res.status(200).json({
-        status: true,
+        success: true,
         message: "Todos found.",
         data: todos,
       });
@@ -41,7 +41,7 @@ export const getAllTodos = async (req, res, next) => {
       createdAt: -1,
     });
     res.status(200).json({
-      status: true,
+      success: true,
       message: "Todos found.",
       data: todos,
     });
@@ -79,11 +79,11 @@ export const updateTodo = async (req, res, next) => {
     });
 
     if (!saved) {
-       throwError(404, "Todo does not exist.");
+      throwError(404, "Todo does not exist.");
     }
 
     res.status(200).json({
-      status: true,
+      success: true,
       message: "Todos updated.",
       data: saved,
     });
@@ -102,7 +102,7 @@ export const deleteTodo = async (req, res, next) => {
       throwError(404, "Todo does not exists.");
     }
     res.status(200).json({
-      status: true,
+      success: true,
       message: "Todos deleted.",
     });
   } catch (error) {
